@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+
+  tasks:
+  - name: yum install for Apache Web Server
+    yum: name=httpd24
+
+  - name: Start and Enable to Apache
+    service: name=httpd state=started enabled=yes
